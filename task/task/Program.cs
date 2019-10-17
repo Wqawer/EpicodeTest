@@ -16,6 +16,7 @@ namespace task
             {
                 Console.WriteLine("|{0}|{1}|{2}|{3}|",element.id,element.EmployeeId,element.level,element.SeperiorId);
             }
+            var level = GetSupeieriorRowOfEmployee(7,1 , structList);
         }
         public class Employee
         {
@@ -107,6 +108,16 @@ namespace task
             list.Add(new Employee() { Id = 15, Name = "Mark", Superiorid = 16 });
             list.Add(new Employee() { Id = 16, Name = "Jill", Superiorid = 9 });
             return list;
+        }
+        public static int? GetSupeieriorRowOfEmployee(int employeeId, int superiorId, List<EmployeesStructure> employeesStructures)
+        {
+            var structur = employeesStructures.Find(x => 
+            x.SeperiorId == superiorId && 
+            x.EmployeeId == employeeId);
+            if (structur != null)
+                return structur.level;
+            else
+                return null;
         }
 
     }
