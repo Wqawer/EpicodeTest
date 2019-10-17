@@ -1,2 +1,2 @@
 # EpicodeTest
-Zadanie dla testowe epicode
+Zadanie testowe dla epicode
